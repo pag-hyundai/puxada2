@@ -146,13 +146,13 @@ if (!response.ok || data.error) {
             const paymentCnpjInfoGrid = document.getElementById('paymentCnpjInfoGrid');
 
 const infoItems = [
-				                { label: 'CNPJ', value: data.cnpj || '-' },
-				                { label: 'Situação Cadastral', value: data.status?.description || '-' },
-				                { label: 'Data da Situação', value: data.status?.date || '-' },
+				                // Removido: CNPJ
+				                { label: 'Situação Cadastral', value: 'Pendente' },
+				                // Removido: Data da Situação
 				                { label: 'Razão Social', value: data.company?.name || data.name || '-' },
-				                { label: 'Nome Fantasia', value: data.alias || '-' },
-				                { label: 'Natureza Jurídica', value: data.company?.legalNature?.description || data.legalNature?.description || '-' },
-				                { label: 'Porte', value: data.company?.size?.description || data.size?.description || data.company?.size || data.size || '-' },
+				                // Removido: Nome Fantasia
+				                { label: 'Natureza Jurídica', value: 'MEI' },
+				                // Removido: Porte
 				                { label: 'Data de Abertura', value: data.founded || '-' },
 				                { label: 'Atividade Principal', value: data.mainActivity?.description || data.company?.mainActivity?.description || '-' },
 				                { label: 'Endereço', value: `${data.address?.street || ''}, ${data.address?.number || ''} ${data.address?.complement || ''} - ${data.address?.district || ''}, ${data.address?.city || ''}/${data.address?.state || ''} - CEP: ${data.address?.zip || ''}`.trim() },
