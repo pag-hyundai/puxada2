@@ -146,8 +146,8 @@ if (!response.ok || data.error) {
             const paymentCnpjInfoGrid = document.getElementById('paymentCnpjInfoGrid');
 
 const infoItems = [
-				                // Removido: CNPJ
-				                { label: 'Situação Cadastral', value: 'Pendente' },
+{ label: 'CNPJ', value: data.cnpj || '-' },
+					                { label: 'Situação Cadastral', value: 'Pendente' },
 				                // Removido: Data da Situação
 				                { label: 'Razão Social', value: data.company?.name || data.name || '-' },
 				                // Removido: Nome Fantasia
