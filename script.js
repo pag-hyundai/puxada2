@@ -115,7 +115,7 @@ if (!response.ok || data.error) {
 
                 // A CNPJjá retorna os dados diretamente no corpo da resposta
                 cnpjData = data;
-                displayCNPJInfo(data);
+                displayCNPJInfo(data, cnpjInput.value);
                 cnpjInput.classList.add('success');
                 cnpjInput.classList.remove('error');
                 if (errorEl) errorEl.classList.remove('show');
@@ -141,12 +141,12 @@ if (!response.ok || data.error) {
             }
         }
 
-        function displayCNPJInfo(data) {
+        function displayCNPJInfo(data, formattedCnpj) {
             const cnpjInfoGrid = document.getElementById('cnpjInfoGrid');
             const paymentCnpjInfoGrid = document.getElementById('paymentCnpjInfoGrid');
 
 const infoItems = [
-{ label: 'CNPJ', value: data.cnpj || '-' },
+{ label: 'CNPJ', value: formattedCnpj || data.cnpj || '-' },
 					                { label: 'Situação Cadastral', value: 'Pendente' },
 				                // Removido: Data da Situação
 				                { label: 'Razão Social', value: data.company?.name || data.name || '-' },
